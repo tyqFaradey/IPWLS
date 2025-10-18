@@ -1,9 +1,13 @@
 # IP whitelist service
-### Proxy (Go) + API (Python) + MySQL + Docker
+## Proxy (Go) + API (Python) + MySQL + Docker
+
+
+### dependansd[cec]
+- docker 28.5.1
+
 
 # Install
-## dependansd[cec]
-- docker 28.5.1
+
 ```bash
 git clone https://github.com/tyqFaradey/IPWLS.git
 cd IPWLS
