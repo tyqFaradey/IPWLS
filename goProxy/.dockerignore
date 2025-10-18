@@ -1,0 +1,38 @@
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# IDE / редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.bak
+
+# Бинарники и артефакты сборки
+bin/
+build/
+*.exe
+*.out
+
+# Тестовые файлы
+tests/
+coverage/
+*.cover
+*.prof
+
+# Docker и Compose файлы, если не нужны внутри образа
+docker-compose.yml
+
+# Go модульная кэш-папка (необязательно)
+pkg/
+
+.env.example

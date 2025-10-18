@@ -1,0 +1,41 @@
+services:
+  proxy:
+    build: ./goProxy
+    container_name: GoProxyContainer
+    restart: always
+    environment:
+      - PROXY_LISTEN_ADDR=${PROXY_LISTEN_ADDR}
+      - PROXY_TARGET_ADDR=${PROXY_TARGET_ADDR}
+      - API_URL=${API_URL}
+    ports:
+      - "25570:25570"
+    depends_on:
+      - ip_api
+
+  ip_api:
+    build: ./ipAPI
+    container_name: IPApiContainer
+    restart: always
+    environment:  
+      - PYTHONUNBUFFERED=1
+      - DB_URL=${DB_URL}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.1
+    container_name: DatabaseContainer
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:

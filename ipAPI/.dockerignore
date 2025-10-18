@@ -1,0 +1,53 @@
+# Системные и временные файлы
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+
+# Виртуальные окружения
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git и документация
+.git/
+.gitignore
+README.md
+
+# Тесты и артефакты
+tests/
+coverage/
+htmlcov/
+*.coverage
+*.egg-info/
+
+# Docker и compose файлы, если не нужны внутри образа
+docker-compose.yml
+Dockerfile
+
+# Кэш и данные
+__cache__/
+*.cache
+*.bak
+*.tmp
+*.pid
+
+# Node / фронтенд артефакты (если есть)
+node_modules/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
